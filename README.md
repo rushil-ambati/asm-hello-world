@@ -21,3 +21,7 @@ ld -m elf_i386 -o hello_world hello_world.o
 ./hello_world
 ```
 That should yield `Hello World!`.
+
+Screenshot:
+
+![Screenshot](./terminal_output.png?raw=true "Screenshot of compilation and run output")
