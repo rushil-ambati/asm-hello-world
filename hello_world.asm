@@ -49,8 +49,12 @@ _start:
     int 0x80                        ; invoke the syscall again, but this time it's the exit one because we changed it above
 
 section .data:                      ; we'll be initialising all our variables in this
+                                    ; one thing that's curious is how and why variables and other sections are evaluated AFTER
+                                    ; the _start/.text sections during runtime, because generally in programming languages you
+                                    ; declare variables before you use them, but that doesn't seem to hold at this level.
     message: db "Hello World!", 0xA ; db here means "define bytes"
     message_length equ $-message    ; equ means equals
                                     ; $ being current location in memory
                                     ; - being the address of message
                                     ; so with both together we can calculate the length of the string through the address offset
+
