@@ -25,7 +25,7 @@
 ; in the end, we 'compile' the assembly code
 ; to assemble into an object file:      nasm -f elf32 -o hello_world.o  hello_world.asm
 ; to link into an executable file:      ld -m elf_i386 -o hello_world hello_world.o
-; to run:                               hello 
+; to run:                               ./hello_world 
 ; the output:                           Hello World! 
 
 global _start                       ; this is actually quite interesting to note because it's kinda opposite to C 
@@ -52,6 +52,7 @@ section .data:                      ; we'll be initialising all our variables in
                                     ; one thing that's curious is how and why variables and other sections are evaluated AFTER
                                     ; the _start/.text sections during runtime, because generally in programming languages you
                                     ; declare variables before you use them, but that doesn't seem to hold at this level.
+                                    ; could be something to do with the way CPUs are structured with registers, not exactly sure.
     message: db "Hello World!", 0xA ; db here means "define bytes"
     message_length equ $-message    ; equ means equals
                                     ; $ being current location in memory
