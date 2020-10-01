@@ -1,3 +1,6 @@
-hello_world.o
 hello_world
 compilation.gif
+*.exe
+*.o
+*.obj
+*.bc
