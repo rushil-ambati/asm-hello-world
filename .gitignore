@@ -4,3 +4,5 @@ compilation.gif
 *.o
 *.obj
 *.bc
+
+.DS_Store
